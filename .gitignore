@@ -1,9 +1,6 @@
 node_modules
-app/less/services/reset.less
-app/less/services/suppport.less
+app/less/services
 app/less/style.css
 app/less/style.less
 app/fonts
 app/img
-app/less/services/reset.css
-app/less/services/suppport.css
