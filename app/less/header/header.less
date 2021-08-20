@@ -1,0 +1,121 @@
+.header {
+  .header_top-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.9375rem auto 1.125rem;
+    .burger-menu {
+      position: relative;
+      display: block;     
+      width: 45px;
+      height: 45px;
+      background-color: transparent;
+      border:none;
+      border-radius: 8px;
+      outline: none;
+      cursor: pointer;
+      .menu_span {
+        position: relative;
+        display: block;
+        right: -0.625rem;
+        width: 31px;
+        height: 3px;
+        background-color: @red;
+        border-radius: 100px;
+        transition: @transition;
+      }
+      .menu_span--one{
+        top: 3px;
+      }
+
+      .menu_span--top {
+        position: relative;
+        opacity: 1;
+        right: 1px;
+        bottom: 13px;
+        display: block;
+        content: '';
+        width: 43px;
+        height: 3px;
+        background-color: @dark;
+        border-radius: 100px;
+        transform: translateY(0);
+        transition: @transition;
+
+
+
+      }
+      .menu_span--bottom {
+        opacity: 1;
+        position: relative;
+        right: 1px;
+        top: 4px;
+        display: block;
+        content: '';
+        width: 43px;
+        height: 3px;
+        background-color: @dark;
+        border-radius: 100px;
+        transition: @transition;
+
+      }
+      .menu_span--top--active {
+        opacity: 0;
+        transform: translate( 0 ,-10px);
+      }
+      .menu_span--bottom--active {
+        opacity: 0;
+        transform: translate(0,10px);
+      }
+
+
+      .menu_span--one--active {
+        transform: rotate(45deg);
+        background-color: @dark;
+        &::before{
+          opacity: 0;
+          transform: translateY(-100px);
+        }
+      }
+      .menu_span--two--active {
+        transform: rotate(-45deg);
+        background-color: @dark;
+        &::before{
+          opacity: 0;
+          transform: translateY(100px);
+        }
+      }
+    }
+    .header_nav {
+      opacity: 0;
+      position: absolute;
+      min-width: 53.5%;
+      top: 100%;
+      right: -5%;
+      background-color: @white;
+      border-radius: 0 0 5px 5px;
+      transition: @transition;
+      .nav_list {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        margin: 1rem 1.25rem 2rem;
+        .nav_list-item {
+          width: 100%;
+          &:not(:last-child) {
+            padding-bottom: 1.5625rem;
+          }
+          .list-item-link {
+            color: @dark;
+            text-decoration: none;
+          }
+        }
+      }
+
+    }
+    .nav--active {
+      opacity: 1;
+    }
+  }
+}

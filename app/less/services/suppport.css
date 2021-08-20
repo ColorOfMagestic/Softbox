@@ -13,12 +13,20 @@
 html {
   font-size: 16px;
 }
+body {
+  min-width: 360px;
+  max-width: 1920px;
+  font-family: 'Rubik';
+  font-size: 0.9375rem;
+  line-height: 132%;
+  box-sizing: border-box;
+}
 .body_desktop {
   font-family: 'Rubik';
   font-size: 1rem;
   line-height: 132%;
 }
-.body_desktop {
+.body_mobile {
   font-family: 'Rubik';
   font-size: 0.9375rem;
   line-height: 132%;
@@ -42,4 +50,10 @@ html {
   font-family: 'Rubik_medium';
   font-size: 1.125rem;
   line-height: 132%;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
 }
