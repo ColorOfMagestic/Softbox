@@ -1,4 +1,4 @@
-const {src, dest, watch, parallel, series } = require('gulp');
+const { src, dest, watch, parallel, series } = require('gulp');
 const plumber = require("gulp-plumber");
 const less = require('gulp-less');
 const sourcemap = require("gulp-sourcemaps");
@@ -11,7 +11,7 @@ const uglify = require('gulp-uglify-es').default;
 const concat = require('gulp-concat');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
-const svgSprite = require('gulp-svg-sprite');
+// const svgSprite = require('gulp-svg-sprite');
 const del = require('del');
 
 function cleanDist() {
@@ -29,7 +29,7 @@ function styles() {
                 overrideBrowserslist: ['last 10 version'],
                 grid: true
             })
-          ]))
+        ]))
         .pipe(csso())
         .pipe(sourcemap.write("."))
         .pipe(rename("style.min.css"))
@@ -37,15 +37,15 @@ function styles() {
         .pipe(browserSync.stream())
 }
 
-function watching() { 
+function watching() {
     watch(['app/less/**/*.less'], styles);
-    watch(['app/js/**/*.js','!app/js/main.min.js'], scripts);
+    watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch(['app/*.html']).on('change', browserSync.reload);
 }
 
 function browsersync() {
     browserSync.init({
-        server : {
+        server: {
             baseDir: "app/"
         },
         browser: 'firefox',
@@ -54,62 +54,62 @@ function browsersync() {
 
 function scripts() {
     return src([
-    'app/js/main.js'
-    ]) 
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())  
-    .pipe(dest('app/js'))
-    .pipe(browserSync.stream())
+        'app/js/main.js'
+    ])
+        .pipe(concat('main.min.js'))
+        .pipe(uglify())
+        .pipe(dest('app/js'))
+        .pipe(browserSync.stream())
 
 }
 
 function images() {
     return src('app/img/**/*.jpg')
-    .pipe(
-        webp({
-        quality: 70
-    })
-    )
-    .pipe(dest('app/img'))
+        .pipe(
+            webp({
+                quality: 70
+            })
+        )
+        .pipe(dest('app/img'))
 
-    .pipe(src('app/img/**/*.{jpg,png,svg}'))
-    .pipe(imagemin([
-        imagemin.gifsicle({interlaced: true}),
-        imagemin.mozjpeg({progressive: true}),
-        imagemin.optipng({optimizationLevel: 3}),
-        imagemin.svgo({
-            plugins: [
-                {removeViewBox: true},
-                {cleanupIDs: false}
-            ]
-        })
-    ]))
-    .pipe(dest('dist/img'))
+        .pipe(src('app/img/**/*.{jpg,png,svg}'))
+        .pipe(imagemin([
+            imagemin.gifsicle({ interlaced: true }),
+            imagemin.mozjpeg({ progressive: true }),
+            imagemin.optipng({ optimizationLevel: 3 }),
+            imagemin.svgo({
+                plugins: [
+                    { removeViewBox: true },
+                    { cleanupIDs: false }
+                ]
+            })
+        ]))
+        .pipe(dest('dist/img'))
 }
 
-function sprite () {
-    return src('app/img/for_sprite/*.svg')
-    .pipe(svgSprite(
-        config = {
-            shape: {
-              dimension: {
-                maxWidth: 32,
-                maxHeight: 32
-              },
-              spacing: {
-                padding: 15
-              }
-            },
-            mode: {
-                stack : {
-                    sprite : "../icons/icons/svg",
-                    example : true
-                    }
-                },
-            }
-    ))
-    .pipe(dest('app/img'));
-}
+// function sprite () {
+//     return src('app/img/for_sprite/*.svg')
+//     .pipe(svgSprite(
+//         config = {
+//             shape: {
+//               dimension: {
+//                 maxWidth: 32,
+//                 maxHeight: 32
+//               },
+//               spacing: {
+//                 padding: 15
+//               }
+//             },
+//             mode: {
+//                 stack : {
+//                     sprite : "../icons/icons/svg",
+//                     example : true
+//                     }
+//                 },
+//             }
+//     ))
+//     .pipe(dest('app/img'));
+// }
 
 
 function build() {
@@ -118,8 +118,8 @@ function build() {
         'app/fonts/**/*',
         'app/js/main.min.js',
         'app/*.html'
-    ], {base: 'app'})
-    .pipe(dest('dist'))
+    ], { base: 'app' })
+        .pipe(dest('dist'))
 }
 
 
@@ -127,11 +127,11 @@ exports.styles = styles;
 exports.watching = watching;
 exports.browsersync = browsersync;
 exports.scripts = scripts;
-exports.svgSprite = sprite;
+// exports.svgSprite = sprite;
 exports.images = images;
 exports.cleanDist = cleanDist;
 
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(styles, browsersync, watching);
 
