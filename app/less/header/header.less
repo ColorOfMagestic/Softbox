@@ -1,10 +1,16 @@
 .header {
+    margin-top:60px ;
+    background-image: url(../../img/bg_intro_m.png);
+    background-size: cover;
   .header_top-wrapper{
-    position: relative;
+    position: absolute;
+    width: 90%;
+    top: 0.9375rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0.9375rem auto 1.125rem;
+    margin: 0 auto 1.125rem;
+    // padding-top: 0.9375rem;
     .burger-menu {
       position: relative;
       display: block;     
@@ -116,6 +122,52 @@
     }
     .nav--active {
       opacity: 1;
+    }
+  }
+  
+  .header_intro {
+    .header_intro_wrapper {
+      padding: 3.75rem 0;
+      color: @white;
+      .header_intro-title {
+        font-size: 3.125rem;
+        font-family: 'Rubik_medium';
+        line-height: 105%;
+        text-align: center;
+      }
+      .intro-title--fsz23 {
+        font-size: 1.4375rem;
+        line-height: 180.5%;
+        text-align: center;
+      }
+      .intro-title--fsz28 {
+        font-size: 1.75rem;
+        font-family: 'Rubik_medium';
+        line-height: 136%;
+        text-align: center;
+      }
+      .header_intro-text {
+        margin: 0.9375rem auto 14.5rem;
+      }
+      .header_intro-gift {
+        position: absolute;
+        bottom: 1%;
+        right: -1%;
+      }
+      .header_intro-btn {
+        position: relative;
+        display: block;
+        width: 80%;
+        height: 70px;
+        top: 2.5rem;
+        margin: 0 auto;
+        margin-bottom: 2.5rem;
+        border: none;
+        border-radius: 100px;
+        color: @white;
+        background-color: @red;
+        z-index: 2;
+      }
     }
   }
 }
