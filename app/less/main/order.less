@@ -1,0 +1,128 @@
+.order {
+  background-color:@red;
+  background-image: url(../../img/bg_form_1_m.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-bottom: 0.1px solid transparent;
+  .order_title {
+    padding-top: 3.75rem;
+   font-size:	1.75rem;
+   line-height: 120%;
+   .order_title_black {
+    font-family: 'Rubik_medium';
+    font-size: 2.1875rem;
+    line-height: 109%;
+   }
+   .order_title_red {
+    font-family: 'Rubik_medium';
+    font-size: 2.1875rem;
+    line-height: 109%;
+    color: @red;
+   }
+  }
+  .order-form {
+    margin-top: 2.5rem;
+    .order-label {
+      display: block;
+      min-width: 320px;
+      margin-bottom: 0.9375rem;
+      .form_input {
+        width: 100%;
+        padding: 1.25rem;
+        border-radius: 10px;
+        border: none;
+        &:focus {
+           outline: 2px solid @red;
+        }
+      }
+    }
+    .form_comments {
+      width: 100%;
+      padding: 1.25rem;
+      border-radius: 10px;
+      border: none;
+      resize: none;
+      &:focus {
+        outline: 2px solid @red;
+     }
+
+    }
+  }
+  .order_gift-pic {
+    margin: 2rem 0;
+  }
+  .order_btn {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    margin-bottom: 3.75rem;
+    border: none;
+    border-radius: 100px;
+    color: @white;
+    background-color: @red;
+  }
+  .order_delivery {
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 2.8125rem;
+    background-color: @white;
+    border: 1px dotted @red;
+    border-radius: 10px;
+    .delivery_title {
+      display: inline-block;
+      margin-top: 2.125rem;
+      padding-left: 2.6875rem;
+       font-family: 'Rubik_medium';
+      font-size: 1.5625rem;
+      &::after{ 
+        display: block;
+        content: '';
+        width: 100%;
+        height: 3px;
+        background-color: red;
+      }
+    }
+    .delivery_subtitle {
+      margin-top: -1px;
+      padding-top: 1.5625rem;
+      padding-left: 1.25rem;
+      border-top: 1px dotted @red;
+    }
+    .delivery_subtitle--price {
+      margin-top: -1rem;
+      padding-top: 1.3125rem;
+      border-top:none;
+    }
+    .delivery_list {
+      margin-top: 1rem;
+      padding-left:	2.625rem;
+      .delivery_list-item {
+        position: relative;
+        margin-bottom: 0.6875rem;
+        &::before {
+          position: absolute;
+          top: 0.1rem;
+          left: -1.3rem;
+          content: url(../../img/delivery_arrow.png);
+        }
+      }
+    }
+    .delivery_text {
+      position: relative;
+      display: block;
+      padding-top: 1rem;
+      padding-left:	2.625rem;
+      padding-bottom: 0.875rem;
+      margin-bottom: 	1.25rem;
+      &::before {
+        position: absolute;
+        top: 1.125rem;
+        left: 1.3rem;
+        content: url(../../img/delivery_arrow.png);
+      }
+    }
+  }
+
+}

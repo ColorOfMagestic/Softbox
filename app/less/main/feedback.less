@@ -1,0 +1,118 @@
+.feedback {
+  position: relative;
+  .feedback_title {
+    border-bottom: 1px dotted @red;
+    .title_mobile;
+    &::after{
+      position: absolute;
+      display: block;
+      content: '';
+      width: 60%;
+      height: 3px;
+      background-color: @red;
+    }
+
+  }
+  .feedback_btn--mobile {
+    position: absolute;
+    right: 1.25rem;
+    top: 0.625rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid @red;
+    background-color: transparent;
+    z-index: 2;
+    &::after,
+    &::before {
+      position: absolute;
+      left: 0.9375rem;
+      display: block;
+      content: '';
+      width: 17px;
+      height: 2px;
+      background-color: @red;
+    }
+    &::before {
+      transform: rotate(90deg);
+
+    }
+
+  }
+  .feedback_btn {
+    display: none;
+  }
+  .feedback_slider {
+    .feedback_slide {
+      .feedback_slide-card {
+        margin-top: 5.625rem;
+        max-width: 320px;
+        min-height: 341px;
+        margin: 0 auto;
+        margin-top: 5rem;
+        margin-bottom: 8.5rem;
+        padding:1.625rem 1rem 2.5rem ;
+        border:1px dotted @red;
+        border-radius: 10px;
+        text-align: center;
+        .feedback_pic {
+          position: relative;
+          display: block;
+          margin: 0 auto;
+          bottom: 4.5rem;
+          border: 1px dotted @red;
+          border-radius: 50%;
+          background-color: #fff;
+          padding: 0.3rem;
+        }
+        .slide-card_user {
+          color: @red;
+          margin-top: -4.3rem;
+        }
+        .slide-card_user-city {
+          display: block;
+          margin-bottom: 0.875rem;
+        }
+        .stars {
+          display: flex;
+          width: 30%;
+          margin: 0 auto;
+          margin-top: 2rem;
+          .star {
+            &:not(:last-child) {
+              margin-right: 0.2rem;
+            }
+            &::before {
+              display: block;
+              content: url(../../img/Star\ 5.png);
+            }
+          }
+
+        }
+      }
+    }
+    .feedback_pagination {
+      bottom: 5.5rem;
+      .swiper-pagination-bullet {
+        background-color: @red;
+      }
+    }
+    .feedback_button-prev,
+    .feedback_button-next {
+      top: 81%;
+    }
+    .feedback_button-prev {
+      left: 35%;
+      &::after {
+        content: url(../../img/arrow_l.png);
+      }
+    }
+    .feedback_button-next {
+      right: 35%;
+      &::after {
+        content: url(../../img/arrow_r.png);
+      }
+    }
+
+  }
+}
