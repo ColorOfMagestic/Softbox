@@ -21,6 +21,7 @@
    }
   }
   .order-form {
+    position: relative;
     margin-top: 2.5rem;
     .order-label {
       display: block;
@@ -125,4 +126,42 @@
     }
   }
 
+}
+@media (min-width: @tablet) and (max-width: @laptop){
+  .order {
+    position: relative;
+    background-position-x:12%;
+    .order_title {
+      width: 90%;
+      padding-top: 2.5rem;
+     .order_title_black {
+       display: inline-block;
+        width: 90%;
+     }
+    }
+    .order-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .order-label {
+        min-width: 48%;
+      }
+    }
+    .order_btn {
+      position: absolute;
+      display: block;
+      top: 50%;
+      right: 4rem;
+      width: 35%;
+      border: 2px solid @white;
+      border-radius: 100px;
+    }
+    .order_delivery {
+      width: 60%;
+      margin:0 auto;
+      margin-bottom: 2.5rem;
+    }
+  
+  }
+  
 }
