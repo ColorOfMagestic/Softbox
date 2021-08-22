@@ -1,0 +1,202 @@
+.modal_feedback {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;  
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: @transition;
+  .modal_wrapper {
+    position: relative;
+    width: 360px;
+    max-height: 794px;
+    color: @dark;
+    background-color: @white;
+    z-index: 10;
+    &__close {
+      position: absolute;
+      top: -9999;
+      opacity: 0;
+      visibility: hidden;
+      transition: @transition;
+    }
+    .modal_body {
+      position: relative;
+      .modal_close {
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        top: -1.25rem;
+        right: 1.25rem;
+        background-color: inherit;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        &::after,
+        &::before {
+          position: absolute;
+          content: "";
+          display: block;
+          width: 24px;
+          height: 2px; 
+          background-color: #c4c4c4;
+        }
+        &::after {
+          transform: rotate(45deg);
+        }
+        &::before {
+          transform: rotate(-45deg);
+        }
+
+      }
+    }
+    .modal_content {
+      margin: 2.625rem 1.25rem;
+      .modal_content-title {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        width: 55%;
+        .title_mobile;
+        border-bottom: 3px solid @red;
+      }
+      .estimate-wrapper {
+        display: flex;
+        margin: 2.8125rem 0;
+        .estimate-stars {
+          display: flex;
+          margin-left: 1.75rem;
+          .star {
+            &:not(:last-child) {
+              margin-right: 0.625rem;
+            }
+            &::after{
+              position: relative;
+              top: -0.2rem;
+              display: block;
+              content: url(../../img/Star_dis.png);
+            }
+          }
+        }
+      }
+      .modal_form {
+        margin-top: -1px;
+        font-family: 'Rubik';
+        font-size: 0.9375rem;
+        line-height: 132%;
+  
+        .form_label {
+          display: block;
+          min-width: 320px;
+          margin-bottom: 0.9375rem;    
+          .form_input {
+            width: 100%;
+            padding: 1.25rem;
+            border-radius: 10px;
+            border: 1px solid #dedede;
+            &:focus {
+               outline: 2px solid @red;
+            }    
+          }
+          .form-textarea {
+            width: 100%;
+            padding: 1.25rem;
+            border-radius: 10px;
+            border: 1px solid #dedede;
+            resize: none;
+            &:focus {
+              outline: 2px solid @red;
+           }
+      
+          }
+        }
+      }
+
+      .modal_gift {
+        margin: 1rem 0;
+      }
+      .modal_form-submit {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 70px;
+        margin: 0 auto;
+        margin-bottom: 3.75rem;
+        border: none;
+        border-radius: 100px;
+        color: @white;
+        background-color: @red;
+    
+      }
+    }
+  }
+  .modal_wrapper-shipped {
+    opacity: 0;
+    position: absolute;
+    width: 360px;
+    max-height: 500px;
+    background-color: @white;
+    .modal_body {
+      position: relative;
+      .modal_close-shipped {
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        top: -1.25rem;
+        right: 1.25rem;
+        background-color: inherit;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        &::after,
+        &::before {
+          position: absolute;
+          content: "";
+          display: block;
+          width: 24px;
+          height: 2px; 
+          background-color: #c4c4c4;
+        }
+        &::after {
+          transform: rotate(45deg);
+        }
+        &::before {
+          transform: rotate(-45deg);
+        }
+
+      }
+      .modal_content {
+        margin: 2.625rem 1.25rem;
+        .modal_content-title {
+          margin: 0 auto;
+          text-align: center;
+          color: @red;
+          font-family: 'Rubik_medium';
+          font-size: 1.875rem;
+          line-height: 130%;
+          .content-title_black {
+            color: @dark;
+            font-family: 'Rubik_medium';
+            font-size: 1.5625rem;
+            line-height: 130%;
+          }
+        }
+        .modal_content-text {
+          margin-top: 1rem;
+          text-align: center;
+
+        }
+        .modal_gift-thenks {
+          margin: 1.5rem auto;
+        }
+      }
+    }
+  }
+}

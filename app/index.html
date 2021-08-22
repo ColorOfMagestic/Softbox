@@ -302,7 +302,7 @@
       <div class="container">
         <h2 class="question_title">Часто задаваемые
           вопросы</h2>
-        <div class="wrapper">
+        <div class="accordion-wrapper">
           <div class="accordion">
             <div class="accordion_item">
               <div class="accordion_item-trigger">
@@ -378,7 +378,7 @@
   </footer>
   <!--modal order_softbox -->
 
-  <div class="modal" id="order_softbox">
+  <div class="modal_order" id="order_softbox">
     <div class="modal_wrapper">
       <div class="modal_body">
         <button class="modal_close"></button>
@@ -387,37 +387,13 @@
             софтбоксы</h2>
           <form action="" class="modal_form">
             <label class="form_label">
-              <div class="select-wrapper">
-                <select name="age" class="form_select">
-                  <option value="" class="select_option">
-                    Виберите комплект
-                  </option>
-                  <option value="" class="select_option">
-                    3 года
-                  </option>
-                  <option value="" class="select_option">
-                    4 года
-                  </option>
-                  <option value="" class="select_option">
-                    5 лет
-                  </option>
-                  <option value="" class="select_option">
-                    6 лет
-                  </option>
-                  <option value="" class="select_option">
-                    7 лет
-                  </option>
-                </select>
-              </div>
-            </label>
-            <label class="form_label">
               <input type="text" class="form_input" placeholder="Имя" maxlength="20">
             </label>
             <label class="form_label">
               <input type="tel" class="form_input" placeholder="Телефон" maxlength="13">
             </label>
             <label class="form_label">
-              <textarea cols="30" rows="10" placeholder="Комментарий"></textarea>
+              <textarea class="form-textarea" cols="30" rows="3" placeholder="Комментарий"></textarea>
             </label>
           </form>
           <picture>
@@ -435,8 +411,8 @@
         <button class="modal_close-shipped"></button>
         <div class="modal_content">
           <h2 class="modal_content-title">
-            Спасибо.
-            <span>Ваша заявка принята.</span>
+            Спасибо.<br>
+            <span class="content-title_black">Ваша заявка принята.</span>
           </h2>
           <p class="modal_content-text">
             Наш менеджер свяжется с вами
@@ -452,8 +428,9 @@
       </div>
     </div>
   </div>
+
   <!--modal feedback -->
-  <div class="modal" id="feedback">
+  <div class="modal_feedback" id="feedback">
     <div class="modal_wrapper">
       <div class="modal_body">
         <button class="modal_close"></button>
@@ -475,10 +452,10 @@
               <input type="text" class="form_input" placeholder="Имя" maxlength="20">
             </label>
             <label class="form_label">
-              <input type="teче" class="form_input" placeholder="Город" maxlength="25">
+              <input type="text" class="form_input" placeholder="Город" maxlength="25">
             </label>
             <label class="form_label">
-              <textarea cols="30" rows="10" placeholder="Отзыв"></textarea>
+              <textarea class="form-textarea " cols="30" rows="5" placeholder="Отзыв"></textarea>
             </label>
           </form>
           <button class="modal_form-submit" type="submit">Отправить</button>
@@ -490,8 +467,8 @@
         <button class="modal_close-shipped"></button>
         <div class="modal_content">
           <h2 class="modal_content-title">
-            Спасибо.
-            <span>Ваш отзыв находится
+            Спасибо.<br>
+            <span class="content-title_black">Ваш отзыв находится
               на модерации.</span>
           </h2>
           <p class="modal_content-text">

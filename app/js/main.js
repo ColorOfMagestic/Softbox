@@ -1,3 +1,23 @@
+// accordeons
+
+const triggers = document.querySelectorAll('.accordion_item-trigger');
+
+triggers.forEach((item) =>
+  item.addEventListener('click', () => {
+    const parent = item.parentNode;
+
+    if (parent.classList.contains('.accordion_item--active')) {
+      parent.classList.remove('.accordion_item--active');
+    } else {
+      document
+        .querySelectorAll('.accordion_item')
+        .forEach((child) => child.classList.remove('accordion_item--active'))
+
+      parent.classList.add('accordion_item--active')
+    }
+  })
+);
+
 // burger
 
 let burger = document.querySelector('.burger-menu');
@@ -49,21 +69,4 @@ swiper = new Swiper('.feedback_slider', {
 });
 
 
-// accordeons
-
-document.querySelectorAll('.accordion_item-trigger').forEach((item) =>
-  item.addEventListener('click', () => {
-    const parent = item.parentNode;
-
-    if (parent.classList.contains('.accordion_item--active')) {
-      parent.classList.remove('.accordion_item--active');
-    } else {
-      document
-        .querySelectorAll('.accordion_item')
-        .forEach((child) => child.classList.remove('accordion_item--active'))
-
-      parent.classList.add('accordion_item--active')
-    }
-  })
-);
 
