@@ -73,7 +73,6 @@
         border-radius: 100px;
         color: @white;
         background-color: @red;
-        z-index: 2;
   
       }
     }
@@ -190,4 +189,9 @@
     }
   }
   
+}
+@media (min-width: @laptop) and (max-width: @desktop) {
+  .best--mobile{
+    display: none;
+  }
 }

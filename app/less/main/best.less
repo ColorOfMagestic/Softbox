@@ -1,3 +1,92 @@
 .best {
   display: none;
 }
+@media (min-width: @laptop) and (max-width: @desktop) {
+  .best {
+    display: block;
+    margin-top: 10rem;
+    text-align: center;
+    .best_title {
+      display: inline-block;
+      .title_desktop;
+      border-bottom: 3px solid @red;
+    }
+    .best_wrapper {
+      margin-top: -1px;
+      border-top: 1px dotted @red;
+      display: flex;
+      justify-content: space-between;
+      .best_card {
+        min-width: 392px;
+        min-height: 620px;
+        margin-top: 4.0625rem;
+        margin-bottom: 8.125rem;  
+        border:1px dotted #dedede;
+        border-radius: 10px;
+        .slide-card_pic {
+          margin: 2.5625rem auto 4.1875rem;
+        }
+        .slide-card_sign-wrap {
+          min-height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .slide-card_sign {
+            text-align: center;
+            font-size: 1.5625rem;
+            line-height: 123%;
+            &::before {
+              position: relative;
+              top: -1.3125rem;
+              display: block;
+              width: 94px;
+              height: 1px;
+              margin: 0 auto;
+              content: '';
+              background-color: #dedede;
+            }
+            &::after {
+              position: relative;
+              bottom: -1.3125rem;
+              display: block;
+              width: 262px;
+              height: 1px;
+              margin: 0 auto;
+              content: '';
+              background-color: #dedede;
+            }
+          }
+
+        }
+        .slide-card_price {
+          display: block;
+          margin: 0 auto;
+          margin-top: 2.875rem;
+          margin-bottom: 2.75rem;
+          font-family: 'Rubik_medium';
+          font-size: 	1.875rem;
+          line-height: 130%;
+          text-align: center;
+  
+
+        }
+        .slide-card_btn {
+          display: block;
+          position: relative;
+          width: 75%;
+          height: 70px;
+          margin: 0 auto;
+          margin-bottom: 3.1875rem;
+          border: none;
+          border-radius: 100px;
+          color: @white;
+          background-color: @red;
+  
+        }
+      }
+  
+    }
+  
+  }
+  
+}
