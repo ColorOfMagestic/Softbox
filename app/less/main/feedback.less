@@ -1,16 +1,9 @@
 .feedback {
   position: relative;
   .feedback_title {
-    border-bottom: 1px dotted @red;
+    display: inline-block;
+    border-bottom: 3px solid @red;
     .title_mobile;
-    &::after{
-      position: absolute;
-      display: block;
-      content: '';
-      width: 60%;
-      height: 3px;
-      background-color: @red;
-    }
 
   }
   .feedback_btn--mobile {
@@ -43,6 +36,8 @@
     display: none;
   }
   .feedback_slider {
+    margin-top: -1px;
+    border-top: 1px dotted @red;
     .feedback_slide {
       .feedback_slide-card {
         margin-top: 5.625rem;
@@ -115,4 +110,19 @@
     }
 
   }
+}
+@media (min-width: @tablet) and (max-width: @laptop){
+  .feedback {
+    .feedback_btn--mobile {
+      right: 4rem;
+    }
+    .feedback_slider {
+      .feedback_slide {
+        .feedback_slide-card {
+          max-width: 60%;
+        }
+      }  
+    }
+  }
+  
 }
