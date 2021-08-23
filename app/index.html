@@ -107,8 +107,8 @@
           <span class="what-is-it_dot dot-bottom"></span>
         </div>
         <picture>
-          <source srcset="img/softbox_ls.png" media="(min-width:1440px)and (max-width:1920px) " type="image/png">
-          <source srcset="img/cam.png" media="(max-width:1024px)" type="image/png">
+          <source srcset="img/softbox_ls.png" media="(min-width:1024px)and (max-width:1920px) " type="image/png">
+          <source srcset="img/cam.png" media="(max-width:767px)" type="image/png">
           <img class="what-is-it_pic" src="img/cam.png" alt="Камера">
         </picture>
       </div>
@@ -282,6 +282,17 @@
           <span class="order_title_red">сумку переноску</span>
         </h2>
         <form action="" class="order-form">
+          <label class="order-label label-line">
+            <select class="order-select">
+              <option class="order-option disabled" value="0">Выберите вариант</option>
+              <option class="order-option" value="1">Комплект 2 софтбокса
+                с лампами</option>
+              <option class="order-option" value="2">Софтбокса с лампами
+              </option>
+              <option class="order-option" value="3">Комплект 2 софтбокса
+                без лампами</option>
+            </select>
+          </label>
           <label class="order-label">
             <input class="form_input form_name" type="text" placeholder="Имя">
           </label>

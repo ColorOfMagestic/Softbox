@@ -66,6 +66,13 @@ swiper = new Swiper('.feedback_slider', {
     nextEl: '.feedback_button-next',
     prevEl: '.feedback_button-prev',
   },
+  breakpoints: {
+    1440: {
+      keyboard: {
+        enabled: true,
+      }
+    }
+  }
 });
 
 
