@@ -23,12 +23,10 @@ function styles() {
     return src('app/less/style.less')
         .pipe(sourcemap.init())
         .pipe(plumber())
-        .pipe(less())
-        .pipe(postcss([
-            autoprefixer({
-                overrideBrowserslist: ['last 10 version'],
-                grid: true
-            })
+        .pipe(less([autoprefixer({
+            overrideBrowserslist: ['last 10 version'],
+            grid: true
+        })
         ]))
         .pipe(csso())
         .pipe(sourcemap.write("."))

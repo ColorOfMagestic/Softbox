@@ -1,7 +1,6 @@
 .header {
-  min-height: 701px;
     margin-top:3.75rem;
-    background-image: url(../../img/bg_intro_m.png);
+    background-image: url(../img/bg_intro_m.png);
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 0.1px solid transparent;
@@ -149,9 +148,8 @@
         margin: 0.9375rem auto 0;
       }
       .header_intro-gift {
-        position: relative;
-        top: 5rem;
-        left: 1rem;
+        padding-top: 5rem;
+        margin: 0 auto;
       }
       .header_intro-btn {
         position: relative;
@@ -164,129 +162,146 @@
         border-radius: 100px;
         color: @white;
         background-color: @red;
+        &:hover{
+          background-color: @red;
+        }
+        &:active{
+          background-color: #B80614;
+        }
       }
   }
 }
 @media (min-width: @tablet) and (max-width: @laptop){
   .header {
     margin-top:5rem;
-    background-image: url(../../img/bg_intro_ls.png);
+    background-image: url(../../img/bg_intro_m.png);
     background-size: cover;
     background-position-x: 5%;
   .header_top-wrapper{
-    width: 85%;
     .burger-menu {
-      position: relative;
-      display: block;     
-      width: 45px;
-      height: 45px;
-      background-color: transparent;
-      border:none;
-      border-radius: 8px;
-      outline: none;
-      cursor: pointer;
-      .menu_span {
-        position: relative;
-        display: block;
-        right: -0.625rem;
-        width: 31px;
-        height: 3px;
-        background-color: @red;
-        border-radius: 100px;
-        transition: @transition;
-      }
-      .menu_span--one{
-        top: 3px;
-      }
-
-      .menu_span--top {
-        position: relative;
-        opacity: 1;
-        right: 1px;
-        bottom: 13px;
-        display: block;
-        content: '';
-        width: 43px;
-        height: 3px;
-        background-color: @dark;
-        border-radius: 100px;
-        transform: translateY(0);
-        transition: @transition;
-
-
-
-      }
-      .menu_span--bottom {
-        opacity: 1;
-        position: relative;
-        right: 1px;
-        top: 4px;
-        display: block;
-        content: '';
-        width: 43px;
-        height: 3px;
-        background-color: @dark;
-        border-radius: 100px;
-        transition: @transition;
-
-      }
-      .menu_span--top--active {
-        opacity: 0;
-        transform: translate( 0 ,-10px);
-      }
-      .menu_span--bottom--active {
-        opacity: 0;
-        transform: translate(0,10px);
-      }
-
-
-      .menu_span--one--active {
-        transform: rotate(45deg);
-        background-color: @dark;
-        &::before{
-          opacity: 0;
-          transform: translateY(-100px);
-        }
-      }
-      .menu_span--two--active {
-        transform: rotate(-45deg);
-        background-color: @dark;
-        &::before{
-          opacity: 0;
-          transform: translateY(100px);
-        }
-      }
+      margin-right: 6%;
     }
     .header_nav {
-      right: -9%;
+      right: -3%;
       .nav_list {
         margin-right: 2rem;
       }
     }
   }
   .header_intro {
-      .header_intro-text {
-        .body_desktop;
-      }
-      .header_intro-gift {
-        position: relative;
-        top: 5rem;
-        left: 25%;
-      }
-      .header_intro-btn {
-        width: 70%;
-      }
+    margin-top: -2rem;
+    .header_intro-title {
+      padding-top: 8rem;
+    }
+    .header_intro-text {
+      display: block;
+      width: 83%;
+      margin-top: 4.5rem;
+      .body_desktop();
+    }
+    .header_intro-btn {
+      width: 70%;
+      margin-top: -4rem;
+    }
   }
 }
 
 }
-@media (min-width: @laptop) and (max-width: @desktop) {
+@media (min-width: @laptop) and (max-width: @desktop-l){
   .header {
-    margin-top:5rem;
-    background-image: url(../../img/bg_intro_ls.png);
+    min-height: 600px;
+    margin-top:6rem;
+    background-image: url(../img/bg_intro_ls.png);
+    background-size: cover;
+    background-position-x: 0;
+  .header_top-wrapper{
+    position: absolute;
+    top: 0.9rem;
+    width: 90%;
+    margin: 0;
+    background-color:@white;
+    .burger-menu {
+      display: none;
+    }
+    .header_nav {
+      position: relative;
+      opacity: 1;
+      top: 0;
+      right: 5%;
+      width: 40%; 
+      .nav_list {
+        flex-direction: row;
+        justify-content: end;
+        text-align: left;
+        margin: 0;
+        .nav_list-item {
+          position: relative;
+          &:not(:first-child){
+            margin-left: 1.5rem;
+          }
+          &:not(:last-child) {
+            padding-bottom: 0;
+          }
+          &::after {
+            position: absolute;
+            display: block;
+            bottom: -5px;
+            content: '';
+            width: 0%;
+            height: 1px;
+            background-color:@red;
+            transition: @transition;
+          }
+          &:hover {
+              &::after {
+                position: absolute;
+                display: block;
+                bottom: -5px;
+                content: '';
+                width: 100%;
+                height: 1px;
+                background-color:@red;
+              }
+  
+          }
+        }
+
+
+      }
+    }
+}
+  .header_intro {
+    position: relative;
+    text-align: left;
+
+    .header_intro-text {
+      width: 50%;
+      margin-left: 0;
+      .body_desktop;
+    }
+    .header_intro-gift {
+      position: absolute;
+      right: 2%;
+      padding-top: 3rem;
+      
+    }
+    .header_intro-btn {
+      width: 40%;
+      margin: 0;
+      margin-top: 7rem;
+      cursor: pointer;
+    }
+  }
+}
+
+}
+@media (min-width: @desktop-l) and (max-width: @desktop) {
+  .header {
+    margin-top: 5rem;
+    background-image: url(../img/bg_intro_l.png);
     background-size: 100%;
     .header_top-wrapper{
-      width: 85%;
+      width: 65%;
       padding-top: 1rem;
       top: 0;
       display: flex;
@@ -295,16 +310,16 @@
         display: none;
       }
       .header_nav {
+        position: relative;
         opacity: 1;
-        top: 1rem;
+        width: 60%;  
+        margin-top: 0;
         right: 2.5rem;
-        width: 40%;  
         .nav_list {
           flex-direction: row;
           justify-content: end;
           text-align: left;
-          margin-left:0;
-          margin-right:0;
+          margin:1.5rem 0 1rem;
           .nav_list-item {
             position: relative;
             margin-left: 3rem;
@@ -341,21 +356,11 @@
   
     }
     .header_intro {
-      padding-top: 7rem;
-      padding-left: 0.3rem;
       text-align: left;
       .header_intro-title {
+        padding-top: 11rem;
         font-family: 'Rubik_medium';
         font-size: 3.75rem;
-        line-height: 130%;
-      }
-      .intro-title--fsz23 {
-        font-size: 2.5rem;
-        line-height: 130%;
-      }
-      .intro-title--fsz28 {
-        font-family: 'Rubik_medium';
-        font-size: 2.5rem;
         line-height: 130%;
       }
       .header_intro-text {
@@ -366,19 +371,18 @@
         text-align: left;
       }
       .header_intro-gift {
-        position: relative;
-        top: 1rem;
-        left: 34rem;
+        position: absolute;
+        bottom: 25%;
+        left: 38.5%;
       }
       .header_intro-btn {
         position: relative;
-        left: -1rem;
-        bottom: 20rem;
         display: block;
         width: 20%;
         height: 70px;
         margin: 0;
-        margin-bottom: 3.75rem;
+        margin-top: 40px;
+        margin-bottom: 158px;
         border: none;
         border-radius: 100px;
         color: @white;
@@ -388,7 +392,6 @@
   }
 
   
-}
-
+  }
 }
 
