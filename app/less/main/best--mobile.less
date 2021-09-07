@@ -1,14 +1,25 @@
+@import "../services/support.less";
+
 .best--mobile {
+    position: relative;
   margin-top: 5rem;
   .best_title {
+      position: relative;
     display: inline-block;
     width: 90%;
-    .title_mobile;
+    .title_mobile();
     border-bottom: 3px solid @red;
+    &::after {
+        position: absolute;
+		bottom: -3px;
+		right: -12%;
+        content: '';
+		width: 45%;
+		border-bottom: 1px dotted @red;
+    }
   }
   .best_slider {
     margin-top: -1px;
-    border-top: 1px dotted @red;
     .best_slide-card {
       max-width: 320px;
       min-height: 500px;
@@ -37,7 +48,7 @@
           margin: 0 auto;
           content: '';
           background-color: #dedede;
-  
+
         }
         &::after {
           position: relative;
@@ -48,10 +59,10 @@
           margin: 0 auto;
           content: '';
           background-color: #dedede;
-  
+
         }
-  
-  
+
+
       }
       .slide-card_price {
         display: block;
@@ -73,7 +84,7 @@
         border-radius: 100px;
         color: @white;
         background-color: @red;
-  
+
       }
     }
     .swiper-pagination {
@@ -84,7 +95,7 @@
     }
     .best_button-next,
     .best_button-prev {
-      top: 85.5%;
+      top: 87%;
     }
     .best_button-prev {
       left: 35%;
@@ -105,6 +116,10 @@
     margin-top: 2.5rem;
     .best_title {
       display: inline;
+	  &::after {
+		right: -30%;
+    }
+
     }
     .best_slider {
       .best_slide-card {
@@ -124,7 +139,7 @@
             margin: 0 auto;
             content: '';
             background-color: #dedede;
-    
+
           }
           &::after {
             position: relative;
@@ -135,10 +150,10 @@
             margin: 0 auto;
             content: '';
             background-color: #dedede;
-    
+
           }
-    
-    
+
+
         }
         .slide-card_price {
           display: block;
@@ -161,7 +176,7 @@
           color: @white;
           background-color: @red;
           z-index: 2;
-    
+
         }
       }
       .swiper-pagination {
@@ -172,7 +187,7 @@
       }
       .best_button-next,
       .best_button-prev {
-        top: 85.5%;
+        top: 86%;
       }
       .best_button-prev {
         left: 35%;
@@ -188,10 +203,10 @@
       }
     }
   }
-  
+
 }
 @media (min-width: @laptop) and (max-width: @desktop) {
-  .best--mobile{
-    display: none;
-  }
+.best--mobile {
+	display: none;
+}
 }

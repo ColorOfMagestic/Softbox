@@ -1,3 +1,281 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url('../fonts/Rubik.woff2') format('woff2'), url('../fonts/Rubik.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rubik_medium';
+  src: url('../fonts/Rubikmedium.woff2') format('woff2'), url('../fonts/Rubikmedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+body {
+  min-width: 360px;
+  max-width: 1921px;
+  font-family: 'Rubik';
+  font-size: 0.9375rem;
+  line-height: 132%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.body_desktop {
+  font-family: 'Rubik';
+  font-size: 1rem;
+  line-height: 132%;
+}
+.body_mobile {
+  font-family: 'Rubik';
+  font-size: 0.9375rem;
+  line-height: 132%;
+}
+.title_desktop {
+  font-family: 'Rubik_medium';
+  font-size: 2.1875rem;
+  line-height: 132%;
+}
+.title_mobile {
+  font-family: 'Rubik_medium';
+  font-size: 1.875rem;
+  line-height: 132%;
+}
+.btn_desktop {
+  font-family: 'Rubik_medium';
+  font-size: 1.125rem;
+  line-height: 132%;
+}
+.btn_mobile {
+  font-family: 'Rubik_medium';
+  font-size: 1.125rem;
+  line-height: 132%;
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  .container {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1023px) and (max-width: 1439px) {
+  body {
+    font-family: 'Rubik';
+    font-size: 1rem;
+    line-height: 132%;
+  }
+  .container {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1439px) and (max-width: 1921px) {
+  .container {
+    max-width: 65%;
+    margin: 0 auto;
+  }
+}
 .best--mobile {
+  position: relative;
   margin-top: 5rem;
+}
+.best--mobile .best_title {
+  position: relative;
+  display: inline-block;
+  width: 90%;
+  font-family: 'Rubik_medium';
+  font-size: 1.875rem;
+  line-height: 132%;
+  border-bottom: 3px solid #d01f2d;
+}
+.best--mobile .best_title::after {
+  position: absolute;
+  bottom: -3px;
+  right: -12%;
+  content: '';
+  width: 45%;
+  border-bottom: 1px dotted #d01f2d;
+}
+.best--mobile .best_slider {
+  margin-top: -1px;
+}
+.best--mobile .best_slider .best_slide-card {
+  max-width: 320px;
+  min-height: 500px;
+  margin: 0 auto;
+  margin-top: 2.8125rem;
+  margin-bottom: 8.5rem;
+  padding: 1.625rem 2.5rem 2.5rem;
+  border: 1px dotted #dedede;
+  border-radius: 10px;
+}
+.best--mobile .best_slider .best_slide-card .slide-card_pic {
+  margin: 0 auto;
+}
+.best--mobile .best_slider .best_slide-card .slide-card_sign {
+  margin-top: 3rem;
+  font-size: 1.25rem;
+  line-height: 130%;
+  font-weight: 300;
+  text-align: center;
+}
+.best--mobile .best_slider .best_slide-card .slide-card_sign::before {
+  position: relative;
+  top: -1.875rem;
+  display: block;
+  width: 65px;
+  height: 1px;
+  margin: 0 auto;
+  content: '';
+  background-color: #dedede;
+}
+.best--mobile .best_slider .best_slide-card .slide-card_sign::after {
+  position: relative;
+  bottom: -1.875rem;
+  display: block;
+  width: 202px;
+  height: 1px;
+  margin: 0 auto;
+  content: '';
+  background-color: #dedede;
+}
+.best--mobile .best_slider .best_slide-card .slide-card_price {
+  display: block;
+  margin: 0 auto;
+  margin-top: 3.125rem;
+  font-family: 'Rubik_medium';
+  font-size: 1.5625rem;
+  line-height: 130%;
+  text-align: center;
+}
+.best--mobile .best_slider .best_slide-card .slide-card_btn {
+  display: block;
+  position: relative;
+  width: 75%;
+  height: 70px;
+  margin: 0 auto;
+  margin-top: 1.9375rem;
+  border: none;
+  border-radius: 100px;
+  color: #ffffff;
+  background-color: #d01f2d;
+}
+.best--mobile .best_slider .swiper-pagination {
+  bottom: 5.5rem;
+}
+.best--mobile .best_slider .swiper-pagination .swiper-pagination-bullet {
+  background-color: #d01f2d;
+}
+.best--mobile .best_slider .best_button-next,
+.best--mobile .best_slider .best_button-prev {
+  top: 87%;
+}
+.best--mobile .best_slider .best_button-prev {
+  left: 35%;
+}
+.best--mobile .best_slider .best_button-prev::after {
+  content: url(../../img/arrow_l.png);
+}
+.best--mobile .best_slider .best_button-next {
+  right: 35%;
+}
+.best--mobile .best_slider .best_button-next::after {
+  content: url(../../img/arrow_r.png);
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  .best--mobile {
+    margin-top: 2.5rem;
+  }
+  .best--mobile .best_title {
+    display: inline;
+  }
+  .best--mobile .best_title::after {
+    right: -30%;
+  }
+  .best--mobile .best_slider .best_slide-card {
+    max-width: 60%;
+  }
+  .best--mobile .best_slider .best_slide-card .slide-card_sign {
+    margin-top: 3rem;
+    font-size: 1.25rem;
+    line-height: 130%;
+    font-weight: 300;
+    text-align: center;
+  }
+  .best--mobile .best_slider .best_slide-card .slide-card_sign::before {
+    position: relative;
+    top: -1.875rem;
+    display: block;
+    width: 65px;
+    height: 1px;
+    margin: 0 auto;
+    content: '';
+    background-color: #dedede;
+  }
+  .best--mobile .best_slider .best_slide-card .slide-card_sign::after {
+    position: relative;
+    bottom: -1.875rem;
+    display: block;
+    width: 202px;
+    height: 1px;
+    margin: 0 auto;
+    content: '';
+    background-color: #dedede;
+  }
+  .best--mobile .best_slider .best_slide-card .slide-card_price {
+    display: block;
+    margin: 0 auto;
+    margin-top: 3.125rem;
+    font-family: 'Rubik_medium';
+    font-size: 1.5625rem;
+    line-height: 130%;
+    text-align: center;
+  }
+  .best--mobile .best_slider .best_slide-card .slide-card_btn {
+    display: block;
+    position: relative;
+    width: 75%;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 1.9375rem;
+    border: none;
+    border-radius: 100px;
+    color: #ffffff;
+    background-color: #d01f2d;
+    z-index: 2;
+  }
+  .best--mobile .best_slider .swiper-pagination {
+    bottom: 5.5rem;
+  }
+  .best--mobile .best_slider .swiper-pagination .swiper-pagination-bullet {
+    background-color: #d01f2d;
+  }
+  .best--mobile .best_slider .best_button-next,
+  .best--mobile .best_slider .best_button-prev {
+    top: 86%;
+  }
+  .best--mobile .best_slider .best_button-prev {
+    left: 35%;
+  }
+  .best--mobile .best_slider .best_button-prev::after {
+    content: url(../../img/arrow_l.png);
+  }
+  .best--mobile .best_slider .best_button-next {
+    right: 35%;
+  }
+  .best--mobile .best_slider .best_button-next::after {
+    content: url(../../img/arrow_r.png);
+  }
+}
+@media (min-width: 1023px) and (max-width: 1921px) {
+  .best--mobile {
+    display: none;
+  }
 }
