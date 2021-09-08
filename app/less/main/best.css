@@ -1,3 +1,288 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url('../fonts/Rubik.woff2') format('woff2'), url('../fonts/Rubik.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rubik_medium';
+  src: url('../fonts/Rubikmedium.woff2') format('woff2'), url('../fonts/Rubikmedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+body {
+  min-width: 360px;
+  max-width: 1921px;
+  font-family: 'Rubik';
+  font-size: 0.9375rem;
+  line-height: 132%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.body_desktop {
+  font-family: 'Rubik';
+  font-size: 1rem;
+  line-height: 132%;
+}
+.body_mobile {
+  font-family: 'Rubik';
+  font-size: 0.9375rem;
+  line-height: 132%;
+}
+.title_desktop {
+  font-family: 'Rubik_medium';
+  font-size: 2.1875rem;
+  line-height: 132%;
+}
+.title_mobile {
+  font-family: 'Rubik_medium';
+  font-size: 1.875rem;
+  line-height: 132%;
+}
+.btn_desktop {
+  font-family: 'Rubik_medium';
+  font-size: 1.125rem;
+  line-height: 132%;
+}
+.btn_mobile {
+  font-family: 'Rubik_medium';
+  font-size: 1.125rem;
+  line-height: 132%;
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  .container {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1023px) and (max-width: 1439px) {
+  body {
+    font-family: 'Rubik';
+    font-size: 1rem;
+    line-height: 132%;
+  }
+  .container {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1439px) and (max-width: 1921px) {
+  .container {
+    max-width: 65%;
+    margin: 0 auto;
+  }
+}
 .best {
   display: none;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  .best {
+    display: none;
+  }
+}
+@media (min-width: 1023px) and (max-width: 1439px) {
+  .best {
+    display: block;
+    margin-top: 10rem;
+    text-align: center;
+  }
+  .best .best_title {
+    display: inline-block;
+    font-family: 'Rubik_medium';
+    font-size: 2.1875rem;
+    line-height: 132%;
+    border-bottom: 3px solid #d01f2d;
+  }
+  .best .best_wrapper {
+    margin-top: -1px;
+    border-top: 1px dotted #d01f2d;
+    display: flex;
+    justify-content: space-between;
+  }
+  .best .best_wrapper .best_card {
+    width: 32%;
+    min-width: 180px;
+    min-height: 580px;
+    margin-top: 4.0625rem;
+    margin-bottom: 8.125rem;
+    border: 1px dotted #dedede;
+    border-radius: 10px;
+  }
+  .best .best_wrapper .best_card:nth-child(2) .slide-card_pic {
+    margin-top: 1.25rem;
+  }
+  .best .best_wrapper .best_card:nth-child(3) .slide-card_pic {
+    margin-top: 1.25rem;
+  }
+  .best .best_wrapper .best_card .slide-card_pic {
+    margin: 1.5625rem auto 2.1875rem;
+  }
+  .best .best_wrapper .best_card .slide-card_sign-wrap {
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .best .best_wrapper .best_card .slide-card_sign-wrap::before {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 94px;
+    height: 1px;
+    margin: 0 auto;
+    content: '';
+    background-color: #dedede;
+  }
+  .best .best_wrapper .best_card .slide-card_sign-wrap::after {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 60%;
+    height: 1px;
+    margin: 0 auto;
+    content: '';
+    background-color: #dedede;
+  }
+  .best .best_wrapper .best_card .slide-card_sign-wrap .slide-card_sign {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 123%;
+  }
+  .best .best_wrapper .best_card .slide-card_price {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1.875rem;
+    margin-bottom: 1.75rem;
+    font-family: 'Rubik_medium';
+    font-size: 1.5rem;
+    line-height: 130%;
+    text-align: center;
+  }
+  .best .best_wrapper .best_card .slide-card_btn {
+    display: block;
+    position: relative;
+    width: 75%;
+    height: 70px;
+    margin: 0 auto;
+    margin-bottom: 1.625rem;
+    border: none;
+    border-radius: 100px;
+    color: #ffffff;
+    background-color: #d01f2d;
+  }
+  .best .best_wrapper .best_card .slide-card_btn:hover {
+    background-color: #d01f2d;
+  }
+  .best .best_wrapper .best_card .slide-card_btn:active {
+    background-color: #B80614;
+  }
+}
+@media (min-width: 1439px) and (max-width: 1921px) {
+  .best {
+    display: block;
+    margin-top: 10rem;
+    text-align: center;
+  }
+  .best .best_title {
+    display: inline-block;
+    font-family: 'Rubik_medium';
+    font-size: 2.1875rem;
+    line-height: 132%;
+    border-bottom: 3px solid #d01f2d;
+  }
+  .best .best_wrapper {
+    margin-top: -1px;
+    border-top: 1px dotted #d01f2d;
+    display: flex;
+    justify-content: space-between;
+  }
+  .best .best_wrapper .best_card {
+    width: 32%;
+    min-width: 180px;
+    min-height: 580px;
+    margin-top: 4.0625rem;
+    margin-bottom: 8.125rem;
+    border: 1px dotted #dedede;
+    border-radius: 10px;
+  }
+  .best .best_wrapper .best_card:nth-child(2) .slide-card_pic {
+    margin-top: 1.25rem;
+  }
+  .best .best_wrapper .best_card:nth-child(3) .slide-card_pic {
+    margin-top: 1.25rem;
+  }
+  .best .best_wrapper .best_card .slide-card_pic {
+    margin: 1.5625rem auto 2.1875rem;
+  }
+  .best .best_wrapper .best_card .slide-card_sign-wrap {
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .best .best_wrapper .best_card .slide-card_sign-wrap::before {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 94px;
+    height: 1px;
+    margin: 0 auto;
+    content: '';
+    background-color: #dedede;
+  }
+  .best .best_wrapper .best_card .slide-card_sign-wrap::after {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 60%;
+    height: 1px;
+    margin: 0 auto;
+    content: '';
+    background-color: #dedede;
+  }
+  .best .best_wrapper .best_card .slide-card_sign-wrap .slide-card_sign {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 123%;
+  }
+  .best .best_wrapper .best_card .slide-card_price {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1.875rem;
+    margin-bottom: 1.75rem;
+    font-family: 'Rubik_medium';
+    font-size: 1.5rem;
+    line-height: 130%;
+    text-align: center;
+  }
+  .best .best_wrapper .best_card .slide-card_btn {
+    display: block;
+    position: relative;
+    width: 75%;
+    height: 70px;
+    margin: 0 auto;
+    margin-bottom: 1.625rem;
+    border: none;
+    border-radius: 100px;
+    color: #ffffff;
+    background-color: #d01f2d;
+  }
+  .best .best_wrapper .best_card .slide-card_btn:hover {
+    background-color: #d01f2d;
+  }
+  .best .best_wrapper .best_card .slide-card_btn:active {
+    background-color: #B80614;
+  }
 }
