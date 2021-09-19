@@ -205,10 +205,11 @@
 		</section>
 		<section class="feedback">
 			<div class="container">
-				<h2 class="feedback_title">Отзывы
+				<h2 class="feedback_title"><span class="feedback_title-span">
+						Отзывы
+					</span>
 					наших клиентов
 				</h2>
-				<span class="feedback_title_line"></span>
 				<button class="feedback_btn--mobile"></button>
 				<button class="feedback_btn">Оставить отзыв</button>
 				<div class="feedback_slider swiper-container">
@@ -303,42 +304,45 @@
 					<span class="order_title_black">в подарок</span>
 					<span class="order_title_red">сумку переноску</span>
 				</h2>
-				<form action="" class="order-form">
-					<label class="order-label label-line">
-						<select class="order-select">
-							<option class="order-option disabled" value="0">Выберите вариант</option>
-							<option class="order-option" value="1">Комплект 2 софтбокса
-								с лампами</option>
-							<option class="order-option" value="2">Софтбокса с лампами
-							</option>
-							<option class="order-option" value="3">Комплект 2 софтбокса
-								без лампами</option>
-						</select>
-					</label>
-					<label class="order-label">
-						<input class="form_input form_name" type="text" placeholder="Имя">
-					</label>
-					<label class="order-label">
-						<input class="form_input form_tel" type="tel" placeholder="Телефон">
-					</label>
-					<textarea class="form_comments" cols="10" rows="4" placeholder="Комментарий"></textarea>
-				</form>
-				<picture>
-					<source srcset="img/gift_modal_order_l.png" media="(min-width:768px)and (max-width:1920px) " type="image/png">
-					<source srcset="img/gift_modal_order_m.png" media="(max-width:768px)" type="image/png">
-					<img class="order_gift-pic" src="img/gift_modal_order_m.png" alt="Подарок">
-				</picture>
-				<button class="order_btn">Заказать</button>
-				<div class="order_delivery">
-					<h3 class="delivery_title">Доставка и оплата</h3>
-					<h4 class="delivery_subtitle">Способы доставки:</h4>
-					<ul class="delivery_list">
-						<li class="delivery_list-item">Почтой РФ</li>
-						<li class="delivery_list-item">Логистическая компания СДЭК</li>
-						<li class="delivery_list-item">Курьерская доставка в пределах МКАД</li>
-					</ul>
-					<h4 class="delivery_subtitle delivery_subtitle--price">Оплата:</h4>
-					<p class="delivery_text">Оплата при получении</p>
+				<div class="order-wrapper">
+					<form action="" class="order-form">
+						<label class="order-label label-line">
+							<select class="order-select">
+								<option class="order-option disabled" value="0">Выберите вариант</option>
+								<option class="order-option" value="1">Комплект 2 софтбокса
+									с лампами</option>
+								<option class="order-option" value="2">Софтбокса с лампами
+								</option>
+								<option class="order-option" value="3">Комплект 2 софтбокса
+									без лампами</option>
+							</select>
+						</label>
+						<label class="order-label">
+							<input class="form_input form_name" type="text" placeholder="Имя">
+						</label>
+						<label class="order-label">
+							<input class="form_input form_tel" type="tel" placeholder="Телефон">
+						</label>
+						<textarea class="form_comments" cols="10" rows="4" placeholder="Комментарий"></textarea>
+					</form>
+					<picture class="odr-pic">
+						<source srcset="img/gift_modal_order_l.png" media="(min-width:768px)and (max-width:1920px) "
+							type="image/png">
+						<source srcset="img/gift_modal_order_m.png" media="(max-width:768px)" type="image/png">
+						<img class="order_gift-pic" src="img/gift_modal_order_m.png" alt="Подарок">
+					</picture>
+					<button class="order_btn">Заказать</button>
+					<div class="order_delivery">
+						<h3 class="delivery_title">Доставка и оплата</h3>
+						<h4 class="delivery_subtitle">Способы доставки:</h4>
+						<ul class="delivery_list">
+							<li class="delivery_list-item">Почтой РФ</li>
+							<li class="delivery_list-item">Логистическая компания СДЭК</li>
+							<li class="delivery_list-item">Курьерская доставка в пределах МКАД</li>
+						</ul>
+						<h4 class="delivery_subtitle delivery_subtitle--price">Оплата:</h4>
+						<p class="delivery_text">Оплата при получении</p>
+					</div>
 				</div>
 			</div>
 		</section>

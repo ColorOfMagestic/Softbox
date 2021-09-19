@@ -1,12 +1,24 @@
+@import "../services/support.less";
+
 .feedback {
   position: relative;
   .feedback_title {
+		position: relative;
     display: inline-block;
     border-bottom: 3px solid @red;
-    .title_mobile;
-  }
-  .feedback_title_line {
-    display: none;
+    .title_mobile();
+		&::after {
+			position: absolute;
+			bottom: -3px;
+			right: -30%;
+			content: '';
+			display: block;
+			width: 30%;
+			border-top: 1px dotted @red;
+		}
+		.feedback_title-span {
+			display: block;
+		}
   }
   .feedback_btn--mobile {
     position: absolute;
@@ -39,7 +51,7 @@
   }
   .feedback_slider {
     margin-top: -1px;
-    border-top: 1px dotted @red;
+		overflow: hidden;
     .feedback_slide {
       .feedback_slide-card {
         margin-top: 5.625rem;
@@ -92,12 +104,12 @@
     .feedback_pagination {
       bottom: 5.5rem;
       .swiper-pagination-bullet {
-        background-color: @red;
+      background-color: @red;
       }
     }
     .feedback_button-prev,
     .feedback_button-next {
-      top: 81%;
+      top: 83.5%;
     }
     .feedback_button-prev {
       left: 35%;
@@ -111,34 +123,55 @@
         content: url(../../img/arrow_r.png);
       }
     }
-
   }
 }
 @media (min-width: @tablet) and (max-width: @laptop){
   .feedback {
+		.feedback_title {
+			&::after {
+				position: absolute;
+				bottom: -3px;
+				right: -70%;
+				width: 100%;
+			}
+			.feedback_title-span {
+				display: inline;
+			}
+		}
+
     .feedback_btn--mobile {
+			top: -0.5rem;
       right: 4rem;
     }
     .feedback_slider {
       .feedback_slide {
         .feedback_slide-card {
           max-width: 60%;
+					margin-top: 5rem;
+					margin-bottom: 8.5rem;
         }
-      }  
+      }
+			.feedback_pagination {
+				bottom: 5rem;
+			}
     }
   }
-  
+
 }
-@media (min-width: @laptop) and (max-width: @desktop) {
+@media (min-width: @laptop) and (max-width: @desktop-l) {
   .feedback {
     .feedback_title {
       padding-bottom: 1.25rem;
-    }
-    .feedback_title_line {
-      display: block;
-      margin-top: -1px;
-      width: 56%;
-      border-bottom: 1px dotted @red;
+			&::after {
+				position: absolute;
+				bottom: -3px;
+				right: -35%;
+				width: 100%;
+			}
+			.feedback_title-span {
+				display: inline;
+			}
+
     }
     .feedback_btn--mobile {
       display: none;
@@ -164,7 +197,6 @@
         .feedback_slide-card {
           max-width: 598px;
           min-height: 300px;
-          margin: 0 auto;
           margin-top: 3.875rem;
           margin-bottom:13.5625rem;
           padding:1.625rem 2rem 5.125rem;
@@ -194,7 +226,7 @@
             width: 30%;
             margin: 0 auto;
             margin-top: 2.3125rem;
-  
+
           }
         }
       }
@@ -203,7 +235,7 @@
       }
       .feedback_button-prev,
       .feedback_button-next {
-        top: 78%;
+        top: 80%;
       }
       .feedback_button-prev {
         left: 44%;
@@ -211,8 +243,188 @@
       .feedback_button-next {
         right: 44%;
       }
-  
+
     }
-  
+
+  }
+}
+@media (min-width: @desktop-l) and (max-width: @desktop) {
+  .feedback {
+    .feedback_title {
+      padding-bottom: 1.25rem;
+			&::after {
+				position: absolute;
+				bottom: -3px;
+				right: -50%;
+				width: 100%;
+			}
+			.feedback_title-span {
+				display: inline;
+			}
+
+    }
+    .feedback_btn--mobile {
+      display: none;
+    }
+    .feedback_btn {
+      position: absolute;
+      top: 0;
+      right: 16rem;
+      display: block;
+      width: 240px;
+      height: 60px;
+      border: 1px solid @red;
+      border-radius: 100px;
+      background-color: transparent;
+      color: @red;
+      font-size: 1.125rem;
+    }
+    .feedback_slider {
+      margin-top: -1px;
+      border-top: none;
+      .feedback_slide {
+        margin-top: 3.875rem;
+        .feedback_slide-card {
+          max-width: 598px;
+          min-height: 300px;
+          margin-top: 3.875rem;
+          margin-bottom:13.5625rem;
+          padding:1.625rem 2rem 5.125rem;
+          border:1px dotted @red;
+          border-radius: 10px;
+          text-align: center;
+          .feedback_pic {
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            bottom: 4.5rem;
+            border: 1px dotted @red;
+            border-radius: 50%;
+            background-color: #fff;
+            padding: 0.3rem;
+          }
+          .slide-card_user {
+            color: @red;
+            margin-top: -3.3rem;
+          }
+          .slide-card_user-city {
+            display: block;
+            margin-bottom: 1rem;
+          }
+          .stars {
+            display: flex;
+            width: 30%;
+            margin: 0 auto;
+            margin-top: 2.3125rem;
+
+          }
+        }
+      }
+      .feedback_pagination {
+        bottom: 8.5rem;
+      }
+      .feedback_button-prev,
+      .feedback_button-next {
+        top: 80%;
+      }
+      .feedback_button-prev {
+        left: 44%;
+      }
+      .feedback_button-next {
+        right: 44%;
+      }
+
+    }
+
+  }
+}
+@media (min-width: @desktop-l) and (max-width: @desktop) {
+  .feedback {
+    .feedback_title {
+      padding-bottom: 1.25rem;
+			&::after {
+				position: absolute;
+				bottom: -3px;
+				right: -50%;
+				width: 100%;
+			}
+			.feedback_title-span {
+				display: inline;
+			}
+
+    }
+    .feedback_btn--mobile {
+      display: none;
+    }
+    .feedback_btn {
+      position: absolute;
+      top: 0;
+      right: 16rem;
+      display: block;
+      width: 240px;
+      height: 60px;
+      border: 1px solid @red;
+      border-radius: 100px;
+      background-color: transparent;
+      color: @red;
+      font-size: 1.125rem;
+    }
+    .feedback_slider {
+      margin-top: -1px;
+      border-top: none;
+      .feedback_slide {
+        margin-top: 3.875rem;
+        .feedback_slide-card {
+          max-width: 598px;
+          min-height: 300px;
+          margin-top: 3.875rem;
+          margin-bottom:13.5625rem;
+          padding:1.625rem 2rem 5.125rem;
+          border:1px dotted @red;
+          border-radius: 10px;
+          text-align: center;
+          .feedback_pic {
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            bottom: 4.5rem;
+            border: 1px dotted @red;
+            border-radius: 50%;
+            background-color: #fff;
+            padding: 0.3rem;
+          }
+          .slide-card_user {
+            color: @red;
+            margin-top: -3.3rem;
+          }
+          .slide-card_user-city {
+            display: block;
+            margin-bottom: 1rem;
+          }
+          .stars {
+            display: flex;
+            width: 30%;
+            margin: 0 auto;
+            margin-top: 2.3125rem;
+
+          }
+        }
+      }
+      .feedback_pagination {
+        bottom: 8.5rem;
+      }
+      .feedback_button-prev,
+      .feedback_button-next {
+        top: 80%;
+      }
+      .feedback_button-prev {
+        left: 44%;
+      }
+      .feedback_button-next {
+        right: 44%;
+      }
+
+    }
+
   }
 }
