@@ -1,12 +1,22 @@
+@import "../services/support.less";
+
 .question {
   .question_title {
+		position: relative;
     display: inline-block;
     margin-top: 5rem;
     .title_mobile;
     border-bottom: 3px solid @red;
+		&::after{
+			position: absolute;
+			left: 0;
+			bottom: -3%;
+			content: "";
+			width: 100%;
+			border: 1px dotted @red;
+		}
   }
   .accordion-wrapper {
-    border-top: 1px dotted @red;
     padding: 2.5rem 0 5rem;
     .accordion_item {
       margin-bottom: 1rem;
@@ -16,6 +26,19 @@
         padding: 1.25rem 1rem;
         border: 1px dotted @red;
         border-radius: 10px;
+        &::after {
+          position: absolute;
+          top: 35%;
+          right: 5%;
+          display: block;
+          content: '';
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 10px 0 10px 12px;
+					border-color: transparent transparent transparent #dedede;
+					transition: ease .5s;
+        }
         &::before {
           position: absolute;
           display: block;
@@ -26,6 +49,15 @@
           background-color: #dedede;
         }
       }
+
+			.accordion_item-trigger--active {
+				&::after {
+					border-color: transparent transparent transparent @red;
+					transform: rotate(90deg);
+        }
+
+			}
+
       .accordion_item-content {
         display: none;
         position: relative;
@@ -33,7 +65,7 @@
         border-radius: 10px;
         &::before {
           display: block;
-          content: ''; 
+          content: '';
           position: absolute;
           top: -0.625rem;
           left: 9.6875rem;
@@ -61,19 +93,126 @@
         display: block;
       }
     }
-    
+
 
   }
 }
 @media (min-width: @tablet) and (max-width: @laptop){
   .question {
     .question_title {
-      margin-top:2.5rem;
-      .title_mobile;
-      border-bottom: 3px solid @red;
+			&::after {
+				left: 30%;
+				bottom: -8%;
+			}
     }
     .accordion-wrapper {
       padding-bottom: 2.5rem;
+			.accordion_item {
+				.accordion_item-trigger {
+					&::after {
+						right: 3%;
+					}
+				}
+			}
+    }
+  }
+}
+@media (min-width: @laptop) and (max-width: @desktop-l){
+  .question {
+    .question_title {
+			font-size: 2.125rem;
+			&::after {
+				left: 30%;
+				bottom: -6%;
+			}
+    }
+    .accordion-wrapper {
+      padding-bottom: 10rem;
+			.accordion {
+				.accordion_item {
+					position: relative;
+					.accordion_item-trigger {
+						width: 48%;
+						max-height: 65px;
+						margin-bottom: 0.625rem;
+						&::after {
+							transform: rotate(90deg);
+							right: 3%;
+						}
+					}
+					.accordion_item-trigger--active {
+						&::after {
+							transform: rotate(0deg);
+						}
+					}
+					.accordion_item-content {
+						position: absolute;
+						top: 0;
+						right: 0;
+						width: 48%;
+						margin-left: auto;
+						&::before {
+							left: -0.625rem;
+							top: 1.25rem;
+							transform: rotate(-45deg);
+						}
+					}
+				}
+			}
+    }
+  }
+}
+@media (min-width: @desktop-l) and (max-width: @desktop){
+  .question {
+		.question-wrapper {
+			margin-top: 7.125rem;
+			margin-bottom: 8.125rem;
+			background-image: url(../../img/bg_softbox_ls.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: 111% 0;
+		}
+    .question_title {
+			margin-top: 5.25rem;
+			&::after {
+				left: 45%;
+				bottom: -6%;
+			}
+    }
+    .accordion-wrapper {
+      padding: 3.1875rem 0;
+			.accordion {
+				width: 85%;
+				.accordion_item {
+					position: relative;
+					.accordion_item-trigger {
+						width: 48%;
+						max-height: 65px;
+						margin-bottom: 0.625rem;
+						&::after {
+							transform: rotate(90deg);
+							right: 3%;
+						}
+					}
+					.accordion_item-trigger--active {
+						&::after {
+							transform: rotate(0deg);
+						}
+					}
+					.accordion_item-content {
+						position: absolute;
+						top: 0;
+						right: 0;
+						width: 48%;
+						margin-left: auto;
+						&::before {
+							left: -0.625rem;
+							top: 1.25rem;
+							transform: rotate(-45deg);
+						}
+					}
+				}
+			}
     }
   }
 }

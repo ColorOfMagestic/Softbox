@@ -299,6 +299,7 @@
 }
 @media (min-width: @desktop-l) and (max-width: @desktop) {
   .header {
+		min-height: 500px;
     margin-top: 5rem;
     background-image: url(../img/bg_intro_l.png);
     background-size: 100%;
@@ -370,8 +371,8 @@
       }
       .header_intro-gift {
         position: absolute;
-        bottom: 25%;
-        left: 38.5%;
+        bottom:-15%;
+        left: 12.5%;
       }
       .header_intro-btn {
         position: relative;
@@ -391,13 +392,32 @@
   }
 }
 @media (min-width: @desktop) {
-  .header {
+	.header {
     .header_top-wrapper{
       width: 70%;
     }
-		.header_intro {
+    .header_intro {
 			padding-bottom: 11.25rem;
-		}
+      .header_intro-gift {
+        bottom:25%;
+        left: 45%;
+      }
+      .header_intro-btn {
+        position: relative;
+        display: block;
+        width: 20%;
+        height: 70px;
+        margin: 0;
+        margin-top: 40px;
+        margin-bottom: 0.9rem;
+        border: none;
+        border-radius: 100px;
+        color: @white;
+        background-color: @red;
+        z-index: 2;
+      }
   }
+  }
+
 }
 
